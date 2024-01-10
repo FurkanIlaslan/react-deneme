@@ -1,0 +1,13 @@
+
+.product-image img{
+    width: 100%;
+    height: 200px;
+}
+
+.product-info{
+    text-align: center;
+}
+
+.product-info h2{
+    margin: 0;
+}
