@@ -1,10 +1,23 @@
+import Counter from '../Counter';
 import ProductInfo from './ProductInfo';
 import './ProductItem.css'
+import React, {useState} from 'react';
 
 function ProductItem(props){
 
     const {product} = props;
     const {imageUrl, producTitle, productPrice} = product
+
+    // const addBtn = document.querySelector(".addBtn");
+    // addBtn.addEventListener("click",function(){
+    //     console.log("Ürün Sepete Eklendi")
+    // })
+
+    const [title, setTitle] = useState(producTitle)
+
+    const clickHandler = () =>{
+        setTitle(`${producTitle} güncellendi`)
+    }
 
     // console.log(product.imageUrl)
     return (
@@ -15,11 +28,12 @@ function ProductItem(props){
 
             <div className="product-info">
                 <ProductInfo>
-                <h2>{producTitle}</h2>
-                <span>{productPrice}₺</span>
+                <h2>{title}</h2>
+                {/* <span>{productPrice}₺</span> */}
+                <Counter productPrice = {productPrice}/>
                 </ProductInfo>
             </div>
-
+            <button onClick={clickHandler}>Sepete Ekle</button>
         </div>
     );
 }

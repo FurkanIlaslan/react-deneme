@@ -1,3 +1,4 @@
+// import Counter from './components/Counter.jsx';
 import Products from './components/Products/Products.jsx';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className='deneme'>
       <Products/>
+      {/* <Counter/> */}
     </div>
   );
 }
